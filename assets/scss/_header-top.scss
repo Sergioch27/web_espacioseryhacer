@@ -1,0 +1,42 @@
+/* Estilos Header top */
+.header_top {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.1rem solid;
+    background-color: $my-background-color-header;
+    box-shadow: $my-box-shadow-header;
+}
+.header_top_section_1 {
+    display: inline-block;
+    width: 33%;
+    p {
+        height: 100%;
+        font-size: 1.5rem;
+    }
+}
+.logo_top_section {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    img {
+        width: 50%;
+    }
+}
+.header_top_section_3 {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    a {
+        color: $my-nav-text;
+        font-family: $my-font-family-text;
+        text-decoration: none;
+        font-size: 1.0rem;
+    }
+    li {
+        display: inline-block;
+        margin: 0px 20px 0px 20px; 
+    }
+}
+  /* FIN Estilos Header top */
+

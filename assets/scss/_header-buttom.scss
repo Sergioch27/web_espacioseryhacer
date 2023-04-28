@@ -1,0 +1,30 @@
+/* Estilos Header buttom */
+.header_bottom {
+    box-shadow: $my-box-shadow-header;
+}
+.option_bottom_nav {
+    padding: 20px;
+    ul {
+        font-family: $my-font-family-text;
+        text-align: center;
+        font-size: 1.0rem;
+        li {
+            img {
+                margin-bottom: 25px;
+                width: 100%; 
+            }
+        }
+    }
+    li {
+        display: inline-block;
+        margin: 0px 70px 0px 20px;
+        a {
+            color: var(--my-nav-text);
+            text-decoration: none;
+        }
+    }
+}
+.mb_0 {
+    margin-bottom: 0px!important;
+}
+/* FIN Estilos Header buttom */

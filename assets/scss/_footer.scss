@@ -1,0 +1,83 @@
+/* Estilos Footer */
+.bd_top {
+    border-top: var(--my-border-top);
+}
+.logo_section_footer {
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+    img {
+        width: 50%;
+    }
+}
+.footer_items_secition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgsize_bottom_footer {
+    ul {
+        li {
+            img {
+                margin-bottom: 12px;
+                width: 55%;
+            }
+        }
+    }
+}
+.option_bottom_nav_footer {
+    ul {
+        font-family: $my-font-family-text;
+        text-align: center;
+        font-size: 1.0rem;
+        a {
+            color: $my-nav-text;
+            text-decoration: none;
+        }
+    }
+    li {
+        display: inline-block;
+        margin: 0px 70px 0px 20px;
+    }
+}
+.footer_nav_section {
+    display: inline-block;
+}
+.footer_bt_user {
+    display: inline-block;
+    ul {
+        font-family: $my-font-family-text;
+        text-align: center;
+        font-size: 1.0rem;
+        li {
+            display: inline-block;
+            margin: 0px 20px 0px 20px;
+            img {
+                margin-bottom: 25px;
+                width: 50%;
+            }
+        }
+    }
+    a {
+        color: $my-nav-text;
+        text-decoration: none;
+    }
+}
+.footer_top {
+    display: table;
+    width: 100%;
+}
+.copyright {
+    padding: 10px;
+    font-size: 2.5rem;
+    display: table-cell;
+}
+.ico_rrss {
+    font-size: 1.5rem;
+    display: table-cell;
+    text-align: right;
+    a {
+        margin: 0 10px 0 10px; 
+    }
+}
+/* FIN Estilos Footer */
