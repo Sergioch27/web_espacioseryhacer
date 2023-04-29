@@ -288,6 +288,8 @@ width: 100%;
 .ico_rrss a {
     margin: 0 10px 0 10px; 
 }
+/* FIN Estilos Footer */
+
 /* Estilos Seccion de Banners */
 .banner_section {
     margin-top: 5px;

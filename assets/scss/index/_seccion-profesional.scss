@@ -1,0 +1,18 @@
+/* inicio seccion de profesional */
+.section_profesionales {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+.card-text-profe {
+    font-size: 1.6rem;
+    font-family: Lato-light;
+}
+.ig_icon {
+    font-size: 1.5rem;
+    color: #19647E;
+}
+.ig_icon:hover {
+    color: #F4D35E;
+}
+/* fin seccion de profesional */

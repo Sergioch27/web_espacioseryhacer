@@ -1,0 +1,21 @@
+/* Inicio seccion de psicoterapia */
+.psico_section {
+    display: flex;
+    justify-content: space-evenly;
+}
+.card-width {
+    max-width: 400px;
+}
+.card-height {
+    height: max-content;
+}
+.card-title-psico {
+    font-size: 2.0rem;
+    font-family: 'Lato-light';
+    font-weight: bold;
+}
+.card-text-psico {
+    font-size: 1.6rem;
+    font-family: Lato-light;
+}
+/* fin seccion de psicoterapia */

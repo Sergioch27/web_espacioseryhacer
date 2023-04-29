@@ -1,0 +1,20 @@
+/* Estilos pagina contacto */
+.text_aling {
+    margin: 20px;
+    text-align: center;
+}
+.box_size_mv {
+    display: inline-block;
+    border: 1px solid;
+    width: 30%;
+    max-height: 400px;
+    h2 {
+        font-family: Lato-light;
+        font-size: 3.5rem;
+    }
+    p {
+        font-size: 2rem;
+        text-align: justify;
+        padding: 15px;
+    }
+}

@@ -308,5 +308,340 @@ html {
 }
 
 /* FIN Estilos Footer */
+/* Estilos Seccion de Banners */
+.banner_section {
+  margin-top: 5px;
+}
+.banner_section img {
+  width: 100%;
+}
+
+/* FIN Estilos Seccion de Banners */
+/* Estilos Seccion de reservas */
+.title-section {
+  text-align: center;
+}
+
+.form_booking {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+  width: 70%;
+  border: var(--my-border);
+}
+.form_booking span {
+  font-size: 1.5rem;
+}
+.form_booking input {
+  width: 170px;
+  height: 30px;
+  margin: 0px 50px 0px 70px;
+}
+.form_booking select {
+  width: 170px;
+  height: 30px;
+}
+
+.title-section h2 {
+  color: #19647E;
+  font-size: 5rem;
+  text-decoration: underline;
+  margin: 20px;
+}
+
+.form_booking input[type=submit] {
+  background-color: #F4D35E;
+}
+
+.arriendo_service {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5rem;
+}
+
+.card {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card_width {
+  width: 35rem;
+}
+
+.icon_card {
+  font-size: 3rem;
+  padding: 3rem;
+}
+
+.card-title {
+  font-size: 3rem;
+  font-family: "Lato-light";
+  font-weight: bold;
+}
+
+.card-text:last-child {
+  font-size: 1.6rem;
+  font-family: Lato-light;
+}
+
+/* Fin Estilos Seccion de reservas */
+/* Inicio seccion de psicoterapia */
+.psico_section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-width {
+  max-width: 400px;
+}
+
+.card-height {
+  height: max-content;
+}
+
+.card-title-psico {
+  font-size: 2rem;
+  font-family: "Lato-light";
+  font-weight: bold;
+}
+
+.card-text-psico {
+  font-size: 1.6rem;
+  font-family: Lato-light;
+}
+
+/* fin seccion de psicoterapia */
+/* inicio seccion de profesional */
+.section_profesionales {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.card-text-profe {
+  font-size: 1.6rem;
+  font-family: Lato-light;
+}
+
+.ig_icon {
+  font-size: 1.5rem;
+  color: #19647E;
+}
+
+.ig_icon:hover {
+  color: #F4D35E;
+}
+
+/* fin seccion de profesional */
+/* INICIO Estilo pagina de arriendo */
+.booking_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card_width_booking_box {
+  max-width: 60%;
+}
+
+/* FIN pagina de arriendo */
+/* media query responsive */
+@media only screen and (max-width: 767px) and (min-width: 320px) {
+  .form_booking input {
+    margin: 10px 0px 10px 0px;
+  }
+}
+.title-section h2 {
+  font-size: 2rem;
+}
+
+.arriendo_service {
+  align-items: center;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.card {
+  margin: 1rem;
+}
+
+.card_width {
+  width: 25rem;
+}
+
+.psico_section {
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.section_profesionales {
+  flex-direction: column;
+  margin: 0rem 2rem 1rem 2rem;
+}
+
+.header_top {
+  display: none;
+}
+
+.header_bottom {
+  display: none;
+}
+
+.footer_nav_section {
+  display: none;
+}
+
+.footer_bt_user {
+  display: none;
+}
+
+.bd_top {
+  border-top: 0;
+}
+
+.bd_top_mobile {
+  border-top: var(--my-border-top);
+}
+
+.logo_section_footer {
+  width: 100%;
+}
+
+.footer_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .title-section h2 {
+    font-size: 5rem;
+  }
+  .form_booking {
+    display: inline-block;
+    width: 95%;
+  }
+  .form_booking form {
+    display: flex;
+    justify-content: center;
+  }
+  .card_width {
+    width: 24rem;
+  }
+  .psico_section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin: 1rem;
+  }
+  .header_top_mobile {
+    display: none;
+  }
+  .option_bottom_nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  .header_bottom_mobile {
+    display: none;
+  }
+  .footer_items_secition {
+    display: none;
+  }
+  .copyright {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header_top {
+    display: flex;
+  }
+  .header_bottom {
+    display: flex;
+    justify-content: center;
+  }
+  .arriendo_service {
+    flex-direction: row;
+  }
+  .booking_box h2 {
+    font-size: 5rem;
+  }
+  .form_booking {
+    display: inline-block;
+    width: 70%;
+  }
+  .form_booking form {
+    display: flex;
+    justify-content: center;
+  }
+  .card_width {
+    width: 32rem;
+  }
+  .section_profesionales {
+    flex-direction: row;
+  }
+  .psico_section {
+    flex-direction: row;
+  }
+  .logo_section_footer {
+    width: 34%;
+  }
+  .footer_nav_section {
+    display: flex;
+  }
+  .footer_top {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer_items_secition {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 1366px) {
+  .header_top {
+    display: flex;
+  }
+  .header_bottom {
+    display: flex;
+    justify-content: center;
+  }
+  .psico_section {
+    flex-direction: row;
+  }
+  .footer_items_secition {
+    display: flex;
+  }
+  .section_profesionales {
+    flex-direction: row;
+  }
+  .arriendo_service {
+    flex-direction: row;
+  }
+  .logo_section_footer {
+    width: 34%;
+  }
+  .footer_nav_section {
+    display: flex;
+  }
+  .footer_top {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media only screen and (max-width: 2560px) and (min-width: 1440px) {
+  .psico_section {
+    flex-direction: row;
+  }
+  .footer_items_secition {
+    display: flex;
+  }
+}
+/* fin media query responsive */
 
 /*# sourceMappingURL=styles.css.map */
