@@ -1,8 +1,27 @@
 /* Estilos Seccion de Banners */
 .banner_section {
-    margin-top: 5px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0);
     img {
         width: 100%;
+    }
+}
+#home_slider {
+    .carousel-indicators {
+        justify-content: center;
+        align-items: center;
+        margin-left: 50%;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        width: 4%;
+        height: 5%;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+        [data-bs-target] {
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            background-color: #28AFB0;
+        }
     }
 }
 /* FIN Estilos Seccion de Banners */

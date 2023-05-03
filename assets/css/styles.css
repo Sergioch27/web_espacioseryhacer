@@ -77,6 +77,10 @@ html {
   margin: 0px 20px 0px 20px;
 }
 
+.imgsize ul li img {
+  width: 100%;
+}
+
 /* FIN Estilos Header top */
 /* Estilos Header top mobile*/
 .header_top_mobile {
@@ -124,6 +128,7 @@ html {
 /* Estilos Header buttom */
 .header_bottom {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
+  position: relative;
 }
 
 .option_bottom_nav {
@@ -225,7 +230,7 @@ html {
 /* FIN Estilos Header buttom mobile */
 /* Estilos Footer */
 .bd_top {
-  border-top: var(--my-border-top);
+  border-top: 1px solid;
 }
 
 .logo_section_footer {
@@ -249,6 +254,7 @@ html {
 }
 
 .option_bottom_nav_footer ul {
+  display: flex;
   font-family: Lato-black;
   text-align: center;
   font-size: 1rem;
@@ -295,7 +301,8 @@ html {
 .copyright {
   padding: 10px;
   font-size: 2.5rem;
-  display: table-cell;
+  display: flex;
+  flex-direction: row;
 }
 
 .ico_rrss {
@@ -310,10 +317,28 @@ html {
 /* FIN Estilos Footer */
 /* Estilos Seccion de Banners */
 .banner_section {
-  margin-top: 5px;
+  box-shadow: 0px 0px 8px 0px rgb(0, 0, 0);
 }
 .banner_section img {
   width: 100%;
+}
+
+#home_slider .carousel-indicators {
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 4%;
+  height: 5%;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+#home_slider .carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: #28AFB0;
 }
 
 /* FIN Estilos Seccion de Banners */
@@ -325,13 +350,15 @@ html {
 .form_booking {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 15px;
   margin: auto;
   width: 70%;
-  border: var(--my-border);
+  border: 1px solid;
+  border-radius: 9px;
 }
 .form_booking span {
   font-size: 1.5rem;
+  padding: 5px;
 }
 .form_booking input {
   width: 170px;
@@ -342,16 +369,18 @@ html {
   width: 170px;
   height: 30px;
 }
+.form_booking form {
+  align-items: center;
+}
+.form_booking input[type=submit] {
+  background-color: #F4D35E;
+}
 
 .title-section h2 {
   color: #19647E;
   font-size: 5rem;
   text-decoration: underline;
   margin: 20px;
-}
-
-.form_booking input[type=submit] {
-  background-color: #F4D35E;
 }
 
 .arriendo_service {
@@ -362,6 +391,10 @@ html {
 
 .card {
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.card_height {
+  min-height: 280px;
 }
 
 .card_width {
@@ -444,6 +477,119 @@ html {
   max-width: 60%;
 }
 
+.wh-50 {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  top: 10%;
+  left: 45% !important;
+}
+
+.slider-text {
+  color: #000000;
+  border: 1px solid;
+  width: 15%;
+  height: 18%;
+  font-size: 4rem;
+  padding: 10px;
+  background-color: #ffffff;
+  opacity: 65%;
+  font-weight: bold;
+}
+
+.size-section {
+  width: 30%;
+  padding: 10px;
+  position: relative;
+  margin-right: 24%;
+  margin-bottom: 5%;
+}
+
+.text-contenedor {
+  border: 1px solid;
+  position: absolute;
+  z-index: 1;
+  top: 145px;
+  left: 270px;
+  background-color: #ffffff;
+  width: 100%;
+  height: max-content;
+  padding: 10px;
+}
+.text-contenedor p {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.text-contenedor h3 {
+  font-size: 5rem;
+}
+
+.box_number {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+.box_number hr {
+  height: 1px;
+  width: 20%;
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.booking_button {
+  width: 182px;
+  height: 48px;
+  padding: 0px 10px 0px 10px;
+  background: #f4d35e;
+  color: #232323;
+  border-color: #232323;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px 3px 3px 3px;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+
+#arriendo_box_pages .carousel-indicators {
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 4%;
+  height: 5%;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+#arriendo_box_pages .carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: #28AFB0;
+}
+
+#carousel_box1_pages .carousel-indicators, #carousel_box2_pages .carousel-indicators {
+  justify-content: left;
+  align-items: center;
+  margin-left: 5%;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 13%;
+  height: 5%;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+#carousel_box1_pages .carousel-indicators [data-bs-target], #carousel_box2_pages .carousel-indicators [data-bs-target] {
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: #28AFB0;
+}
+
 /* FIN pagina de arriendo */
 /* media query responsive */
 @media only screen and (max-width: 767px) and (min-width: 320px) {
@@ -475,6 +621,7 @@ html {
 }
 
 .section_profesionales {
+  align-items: center;
   flex-direction: column;
   margin: 0rem 2rem 1rem 2rem;
 }
@@ -500,7 +647,7 @@ html {
 }
 
 .bd_top_mobile {
-  border-top: var(--my-border-top);
+  border-top: 1px solid;
 }
 
 .logo_section_footer {
@@ -541,8 +688,17 @@ html {
   .card {
     margin: 1rem;
   }
+  .header_top {
+    display: flex;
+  }
+  .header_bottom {
+    display: flex;
+  }
   .header_top_mobile {
     display: none;
+  }
+  .logo_section_footer img {
+    width: 30%;
   }
   .option_bottom_nav ul {
     display: flex;
@@ -552,7 +708,7 @@ html {
     display: none;
   }
   .footer_items_secition {
-    display: none;
+    display: flex;
   }
   .copyright {
     font-size: 1.5rem;
@@ -601,6 +757,9 @@ html {
   }
   .footer_items_secition {
     display: flex;
+  }
+  .copyright {
+    flex-direction: row;
   }
 }
 @media only screen and (min-width: 1366px) {

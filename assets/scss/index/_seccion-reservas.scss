@@ -2,26 +2,38 @@
 .title-section {
     text-align: center;
 }
+
 .form_booking {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
     margin: auto;
     width: 70%;
-    border: var(--my-border);
+    border: 1px solid;
+    border-radius: 9px;
     span {
         font-size: 1.5rem;
+        padding: 5px;
     }
+
     input {
         width: 170px;
         height: 30px;
         margin: 0px 50px 0px 70px;
     }
+
     select {
         width: 170px;
         height: 30px;
     }
+    form {
+        align-items: center;
+    }
+    input[type=submit] {
+        background-color: $my-botton-color;
+    }
 }
+
 .title-section {
     h2 {
         color: $my-nav-text;
@@ -30,33 +42,36 @@
         margin: 20px;
     }
 }
-.form_booking {
-    input[type=submit] {
-        background-color: $my-botton-color;
-    }
-}
 .arriendo_service {
     display: flex;
     justify-content: space-evenly;
     margin-top: 5rem;
 }
+
 .card {
-    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+.card_height {
+    min-height: 280px;
 }
 .card_width {
     width: 35rem;
 }
+
 .icon_card {
     font-size: 3rem;
     padding: 3rem;
 }
+
 .card-title {
     font-size: 3rem;
     font-family: 'Lato-light';
     font-weight: bold;
 }
+
 .card-text:last-child {
     font-size: 1.6rem;
     font-family: Lato-light;
 }
+
 /* Fin Estilos Seccion de reservas */

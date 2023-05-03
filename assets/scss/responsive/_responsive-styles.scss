@@ -27,6 +27,7 @@
     margin: 1rem;
 }
 .section_profesionales {
+    align-items: center;
     flex-direction: column;
     margin: 0rem 2rem 1rem 2rem;
 }
@@ -46,7 +47,7 @@
     border-top: 0;
 }
 .bd_top_mobile {
-    border-top: var(--my-border-top);
+    border-top: $my-border-top;
 }
 .logo_section_footer {
     width: 100%;
@@ -70,8 +71,6 @@
     .form_booking {
         display: inline-block;
         width: 95%;
-    }
-    .form_booking {
         form {
             display: flex;
             justify-content: center;
@@ -87,8 +86,19 @@
     .card {
         margin: 1rem;
     }
+    .header_top {
+        display: flex;
+    }
+    .header_bottom {
+        display: flex;
+    }
     .header_top_mobile {
         display: none;
+    }
+    .logo_section_footer {
+        img {
+            width: 30%;
+        }
     }
     .option_bottom_nav {
         ul {
@@ -100,7 +110,7 @@
         display: none;
     }
     .footer_items_secition {
-        display: none;
+        display: flex;
     }
     .copyright {
         font-size: 1.5rem;
@@ -151,6 +161,9 @@
     }
     .footer_items_secition {
         display: flex;
+    }
+    .copyright {
+        flex-direction: row;
     }
 }
 @media only screen and (min-width: 1366px) {
