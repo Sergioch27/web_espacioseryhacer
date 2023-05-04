@@ -122,7 +122,19 @@
             font-weight: 700;
             font-size: 14px;
             text-align: center;
-    }  
+    }
+    .video_desktop {
+        display: none;
+    }
+    .style_section_mv {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .box_size_mv  {
+        width: 100%;
+        margin-bottom: 5px;
+        max-height: max-content;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -178,6 +190,23 @@
     .copyright {
         font-size: 1.5rem;
     }
+    .video_mobile {
+        display: none;
+    }
+    .booking_box_mobile {
+        display: none;
+    }
+    .size-section {
+        width: 50%;
+        margin-right: 35%;
+    }
+    .text-contenedor {
+        top: 100px;
+    }
+    .box_size_mv {
+        width: 50%;
+        margin: 10px;
+    }
 }
 @media only screen and (min-width: 1024px) {
     .header_top {
@@ -231,6 +260,16 @@
     .size-section {
         margin-bottom: 8%;
     }
+    .video_mobile {
+        display: none;
+    }
+    .booking_box_mobile {
+        display: none;
+    }
+    .size-section {
+        margin-right: 20%;
+        margin-bottom: 0%;
+    }
 }
 @media only screen and (min-width: 1366px) {
     .header_top {
@@ -262,6 +301,10 @@
         flex-direction: row;
         justify-content: space-around;
     }
+    .size-section {
+        width: 30%;
+        margin-bottom: 2%;
+    }
 }
 @media only screen and (max-width: 2560px) and (min-width: 1440px) {
     .psico_section {
@@ -269,6 +312,9 @@
     }
     .footer_items_secition {
         display: flex;
+    }
+    .size-section {
+        width: 30%;
     }
 }
 /* fin media query responsive */

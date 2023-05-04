@@ -279,6 +279,9 @@ html {
   font-family: Lato-black;
   text-align: center;
   font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 }
 .footer_bt_user ul li {
   display: inline-block;
@@ -591,6 +594,38 @@ html {
 }
 
 /* FIN pagina de arriendo */
+/* Estilos pagina contacto */
+.style_section_mv {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.box_size_mv {
+  display: inline-block;
+  border: 1px solid;
+  width: 30%;
+  max-height: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+.box_size_mv h2 {
+  font-family: Lato-light;
+  font-size: 3.5rem;
+  color: #D1B083;
+  font-weight: bold;
+}
+.box_size_mv p {
+  font-size: 2rem;
+  text-align: justify;
+  padding: 15px;
+}
+
+.podcast_section_cardep {
+  display: flex;
+  padding: 5%;
+}
+
 /* media query responsive */
 @media only screen and (max-width: 767px) and (min-width: 320px) {
   .form_booking input {
@@ -706,6 +741,18 @@ html {
     font-size: 14px;
     text-align: center;
   }
+  .video_desktop {
+    display: none;
+  }
+  .style_section_mv {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .box_size_mv {
+    width: 100%;
+    margin-bottom: 5px;
+    max-height: max-content;
+  }
 }
 @media only screen and (min-width: 768px) {
   .title-section h2 {
@@ -753,6 +800,23 @@ html {
   }
   .copyright {
     font-size: 1.5rem;
+  }
+  .video_mobile {
+    display: none;
+  }
+  .booking_box_mobile {
+    display: none;
+  }
+  .size-section {
+    width: 50%;
+    margin-right: 35%;
+  }
+  .text-contenedor {
+    top: 100px;
+  }
+  .box_size_mv {
+    width: 50%;
+    margin: 10px;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -805,6 +869,16 @@ html {
   .size-section {
     margin-bottom: 8%;
   }
+  .video_mobile {
+    display: none;
+  }
+  .booking_box_mobile {
+    display: none;
+  }
+  .size-section {
+    margin-right: 20%;
+    margin-bottom: 0%;
+  }
 }
 @media only screen and (min-width: 1366px) {
   .header_top {
@@ -836,6 +910,10 @@ html {
     flex-direction: row;
     justify-content: space-around;
   }
+  .size-section {
+    width: 30%;
+    margin-bottom: 2%;
+  }
 }
 @media only screen and (max-width: 2560px) and (min-width: 1440px) {
   .psico_section {
@@ -843,6 +921,9 @@ html {
   }
   .footer_items_secition {
     display: flex;
+  }
+  .size-section {
+    width: 30%;
   }
 }
 /* fin media query responsive */

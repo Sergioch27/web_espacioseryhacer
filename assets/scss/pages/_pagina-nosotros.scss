@@ -1,6 +1,7 @@
 /* Estilos pagina contacto */
-.text_aling {
-    margin: 20px;
+.style_section_mv {
+    display: flex;
+    justify-content: space-around;
     text-align: center;
 }
 .box_size_mv {
@@ -8,9 +9,13 @@
     border: 1px solid;
     width: 30%;
     max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
     h2 {
         font-family: Lato-light;
         font-size: 3.5rem;
+        color: #D1B083;
+        font-weight: bold;
     }
     p {
         font-size: 2rem;

@@ -50,6 +50,9 @@
         font-family: $my-font-family-text;
         text-align: center;
         font-size: 1.0rem;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
         li {
             display: inline-block;
             margin: 0px 20px 0px 20px;
