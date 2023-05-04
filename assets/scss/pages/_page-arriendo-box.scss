@@ -11,10 +11,13 @@
     width: 100%;
     height: 100%;
 }
-.carousel-caption {
-    top: 10%;
-    left: 45%!important;
+#arriendo_box_pages {
+    .carousel-caption {
+        top: 10%;
+        left: 45%;
+    }
 }
+
 .slider-text {
     color: #000000;
     border: 1px solid;

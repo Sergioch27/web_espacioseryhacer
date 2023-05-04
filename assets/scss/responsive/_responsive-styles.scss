@@ -1,67 +1,130 @@
 /* media query responsive */
-@media only screen and (max-width: 767px) and (min-width: 320px)  {
+@media only screen and (max-width: 767px) and (min-width: 320px) {
     .form_booking {
         input {
             margin: 10px 0px 10px 0px;
         }
     }
-}
-.title-section {
-    h2{
-        font-size: 2rem;
+    .title-section {
+        h2{
+            font-size: 2rem;
+        }
     }
+    .arriendo_service {
+        align-items: center;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .card {
+        margin: 1rem;
+    }
+    .card_width {
+        width: 25rem;
+    }
+    .psico_section {
+        flex-direction: column;
+        margin: 1rem;
+    }
+    .section_profesionales {
+        align-items: center;
+        flex-direction: column;
+        margin: 0rem 2rem 1rem 2rem;
+    }
+    .header_top {
+        display: none;
+    }
+    .header_bottom {
+        display: none;
+    }
+    .footer_nav_section {
+        display: none;
+    }
+    .footer_bt_user {
+        display: none;
+    }
+    .bd_top {
+        border-top: 0;
+    }
+    .bd_top_mobile {
+        border-top: $my-border-top;
+    }
+    .logo_section_footer {
+        width: 100%;
+    }
+    .footer_top  {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .copyright {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    #arriendo_box_pages {
+        .col_mobile {
+            width: 50%;
+            max-width: 50%;
+            height: 50%;
+        }
+    }
+    .slider-text  {
+        font-size: 2rem;
+        width: 30%;
+        height: fit-content;
+    }
+    #arriendo_box_pages {
+        .carousel-caption {
+            top: 0%;
+            left: 30%;
+        }
+    }
+    .booking_box{
+        display: none;
+    }
+    .booking_box_mobile {
+        padding: 1rem;
+    }
+    .text-contenedor-mobile {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .title_card_content_mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+    .text-contenedor-mobile {
+        .card-text {
+            text-align: justify;
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+    }
+    .box_number {
+        font-size: 1.5rem;
+    }
+    .box_number hr {
+        width: 63%;
+    }
+    #button_card {
+            padding: 0px 10px 0px 10px;
+            background: #f4d35e;
+            color: #232323;
+            border-color: #232323;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 3px 3px 3px 3px;
+            font-family: "Lato";
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+    }  
 }
-.arriendo_service {
-    align-items: center;
-    flex-direction: column;
-    margin-top: 0;
-}
-.card {
-    margin: 1rem;
-}
-.card_width {
-    width: 25rem;
-}
-.psico_section {
-    flex-direction: column;
-    margin: 1rem;
-}
-.section_profesionales {
-    align-items: center;
-    flex-direction: column;
-    margin: 0rem 2rem 1rem 2rem;
-}
-.header_top {
-    display: none;
-}
-.header_bottom {
-    display: none;
-}
-.footer_nav_section {
-    display: none;
-}
-.footer_bt_user {
-    display: none;
-}
-.bd_top {
-    border-top: 0;
-}
-.bd_top_mobile {
-    border-top: $my-border-top;
-}
-.logo_section_footer {
-    width: 100%;
-}
-.footer_top  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.copyright {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+
 @media only screen and (min-width: 768px) {
     .title-section {
         h2 {
@@ -164,6 +227,9 @@
     }
     .copyright {
         flex-direction: row;
+    }
+    .size-section {
+        margin-bottom: 8%;
     }
 }
 @media only screen and (min-width: 1366px) {
