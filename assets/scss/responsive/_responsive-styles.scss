@@ -135,6 +135,27 @@
         margin-bottom: 5px;
         max-height: max-content;
     }
+    .podcast_section_cardep {
+        flex-direction: column;
+        .time {
+            bottom: 150px;
+        }
+    }
+    
+}
+@media only screen and (min-width: 375px) {
+    .podcast_section_cardep {
+        .time {
+            bottom: 185px;
+        }
+    }
+}
+@media only screen and (min-width: 425px) {
+    .podcast_section_cardep {
+        .time {
+            bottom: 210px;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -270,6 +291,11 @@
         margin-right: 20%;
         margin-bottom: 0%;
     }
+    .podcast-info-content {
+        .time {
+            bottom: 115px;
+        }
+    }
 }
 @media only screen and (min-width: 1366px) {
     .header_top {
@@ -305,6 +331,11 @@
         width: 30%;
         margin-bottom: 2%;
     }
+    .podcast-info-content {
+        .time {
+            bottom: 165px;
+        }
+    }
 }
 @media only screen and (max-width: 2560px) and (min-width: 1440px) {
     .psico_section {
@@ -315,6 +346,11 @@
     }
     .size-section {
         width: 30%;
+    }
+    .podcast-info-content {
+        .time {
+            bottom: 185px;
+        }
     }
 }
 /* fin media query responsive */
