@@ -14,10 +14,21 @@
 #arriendo_box_pages {
     .carousel-caption {
         top: 10%;
-        left: 45%;
+        left: 41%;
     }
 }
-
+.video_desktop {
+    position: absolute;
+    left: 392px;
+    width: 100%;
+    height: -webkit-fill-available;
+}
+.video_res_320 {
+    position: absolute;
+    left: 84px;
+    width: 100%;
+    height: -webkit-fill-available;
+}
 .slider-text {
     color: #000000;
     border: 1px solid;
@@ -84,7 +95,7 @@
     .carousel-indicators {
         justify-content: center;
         align-items: center;
-        margin-left: 50%;
+        margin-left: 47%;
         margin-bottom: 5px;
         border-radius: 10px;
         background-color: #ffffff;

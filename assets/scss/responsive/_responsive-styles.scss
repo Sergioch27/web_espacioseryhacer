@@ -141,7 +141,10 @@
             bottom: 150px;
         }
     }
-    
+    .arriendo_contact {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 @media only screen and (min-width: 375px) {
     .podcast_section_cardep {
@@ -155,6 +158,9 @@
         .time {
             bottom: 210px;
         }
+    }
+    .video_res_320 {
+        left: 115px;
     }
 }
 
@@ -228,6 +234,9 @@
         width: 50%;
         margin: 10px;
     }
+    .video_desktop {
+        left: 219px;
+    }
 }
 @media only screen and (min-width: 1024px) {
     .header_top {
@@ -295,6 +304,9 @@
         .time {
             bottom: 115px;
         }
+    }
+    .video_desktop {
+        left: 392px;
     }
 }
 @media only screen and (min-width: 1366px) {
