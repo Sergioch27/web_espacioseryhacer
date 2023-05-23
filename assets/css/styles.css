@@ -44,6 +44,11 @@ html {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
 }
 
+.info_contact {
+  list-style: none;
+  font-size: 2rem;
+}
+
 .header_top_section_1 {
   display: inline-block;
   width: 33%;
@@ -914,6 +919,9 @@ html {
   }
   .bd_top_mobile {
     border-top: 1px solid;
+  }
+  .info_contact {
+    font-size: 1rem;
   }
   .logo_section_footer {
     width: 100%;
