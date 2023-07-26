@@ -27,7 +27,7 @@ class saludo {
 /* el cupon se genera tomando un numero aleatorio entre 0 y 1 (Math.random()) y multiplicandolo por la longitud de la cadena de caracteres, se  redondea hacia abajo devolviendo el entero menor o igual al numero generado = Math.floor. El resultado lo tomamos como la posicion que tenemos que seleccionar en la cadena de caracteres  y se selecciona con charAt() que  devuelve el caracter en esa posicion. asi usando el cliclo for las veces que se establezca el tamaño del codigo.
  */
 class Couponalphanumerico {
-    constructor(length) {
+    constructor() {
         this.length = length;
         this.caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     }
@@ -39,4 +39,34 @@ class Couponalphanumerico {
         }
         return coupon;
     }
+}
+
+class sliderconstructor {
+    constructor() {
+        this.length = length;
+        this.element = [];
+    }
+    genedaorslider () {
+        let length = prompt('indica el numero de elementos del slider');
+        alert(`perfecto vamos a crear un slider con ${length} elementos, ahora vamos a darle nombre a esos elementos`);
+        for(let i = 0; i < length; i++) {
+            let elementos = prompt(`Indicame el Nombre del elemento ${i + 1}`);
+            let contenido = prompt(`indicame el nombre del contenido del elemento ${elementos}`);
+            let sliders = {
+                [elementos]: contenido
+            };
+            this.element.push(sliders)
+        };
+    }
+    activeelement(){
+        alert('Ahora te preguntaremos que Slider quieres dejar activos, Aceptar para activar y cancelar para dejarlo desactivado y no se muestre en la web.');
+        this.element.forEach(slider => {
+            let elemento = Object.keys(slider)[0];
+            let slidercontent = slider[elemento];
+            let activar = confirm(`¿Deseas activar el objeto con clave "${elemento}" y valor "${slidercontent}"?`);
+            slider.activado = activar;
+        });
+        return this.element;
+    }
+    
 }
