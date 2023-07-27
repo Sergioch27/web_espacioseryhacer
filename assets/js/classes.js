@@ -41,6 +41,9 @@ class Couponalphanumerico {
     }
 }
 
+/* Constructor de slider (carrusel), se pregunta la cantidad de elementos del slider, se valida que solo sean numeros. y luego se construye el contenido llenando un array vacio, que tendra de parametro si se activa o no el slider a la vista 
+esto va a permitir luego cual de los elementos mostrar.
+*/
 class sliderconstructor {
     constructor() {
         this.length =  this.getLength();
@@ -64,6 +67,7 @@ class sliderconstructor {
                 let sliders = {
                     [elementos]: contenido
                 };
+                //llenamos el array con los objeto de cada elemento del slider definido.
                 this.element.push(sliders)
             };
     }
