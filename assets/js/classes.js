@@ -43,26 +43,29 @@ class Couponalphanumerico {
 
 class sliderconstructor {
     constructor() {
-        this.length = length;
+        this.length =  this.getLength();
         this.element = [];
     }
-    genedaorslider () {
-        do {
-            let length = prompt('indica el numero de elementos del slider');
-            if (!isNaN(length)){
-                alert(`perfecto vamos a crear un slider con ${length} elementos, ahora vamos a darle nombre a esos elementos`);
-                for(let i = 0; i < length; i++) {
-                    let elementos = prompt(`Indicame el Nombre del elemento ${i + 1}`);
-                    let contenido = prompt(`indicame el nombre del contenido del elemento ${elementos}`);
-                    let sliders = {
-                        [elementos]: contenido
-                    };
-                    this.element.push(sliders)
-                };
-            }else{
-                alert('Solo puede colocar valores numericos')
+    getLength() {
+        let length;
+        while (isNaN(length)) {
+            length = parseInt(prompt('Indica el número de elementos del slider'));
+            if (isNaN(length)) {
+                alert('Solo puede colocar valores numéricos');
             }
-        }while(!isNaN(length))
+        }
+        return length;
+    }
+    genedaorslider () {
+            alert(`perfecto vamos a crear un slider con ${this.length} elementos, ahora vamos a darle nombre a esos elementos`);
+            for(let i = 0; i < this.length; i++) {
+                let elementos = prompt(`Indicame el Nombre del elemento ${i + 1}`);
+                let contenido = prompt(`indicame el nombre del contenido del elemento ${elementos}`);
+                let sliders = {
+                    [elementos]: contenido
+                };
+                this.element.push(sliders)
+            };
     }
     activeelement(){
         alert('Ahora te preguntaremos que Slider quieres dejar activos, Aceptar para activar y cancelar para dejarlo desactivado y no se muestre en la web.');

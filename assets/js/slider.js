@@ -1,6 +1,6 @@
 
-let carrusel = new sliderconstructor();
 alert('Bienvenido al creador de slider, sigue los pasos para obtener tu slider');
+let carrusel = new sliderconstructor();
 let sliders = carrusel.genedaorslider();
 let activo = carrusel.activeelement();
 let slider = activo.filter(activeslider => activeslider.activado !== false );
