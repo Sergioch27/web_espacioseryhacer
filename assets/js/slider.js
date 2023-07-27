@@ -3,12 +3,12 @@ let carrusel = new sliderconstructor();
 alert('Bienvenido al creador de slider, sigue los pasos para obtener tu slider');
 let sliders = carrusel.genedaorslider();
 let activo = carrusel.activeelement();
-let i = 0;
-let activeslider;
-while ((activeslider = activo.find(active => active.activado !== false ,i)) !== false){
-    let elemento = Object.keys(activeslider)[0];
-    let contenido = activeslider[elemento];
-    alert(`Estos son tus Slider Activo: ${elemento}:${contenido}`);
-    i++;
+let slider = activo.filter(activeslider => activeslider.activado !== false );
+function sliderdone(slider){
+    for (let key in slider) {
+        alert(`Este slider esta activo ${key}:${slider[key]}`);
+        break;
+    }
 }
-console.log(activeslider);
+slider.forEach(sliderdone);
+console.log(slider);
