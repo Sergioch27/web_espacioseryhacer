@@ -81,5 +81,4 @@ class sliderconstructor {
         });
         return this.element;
     }
-    
 }
