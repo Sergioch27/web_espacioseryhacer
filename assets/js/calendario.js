@@ -68,7 +68,7 @@ function SaveBooking(){
 }
 function GetBooking(){
     let TotalDays = (JSON.parse(localStorage.getItem('Booking'))).length;
-    let OldLocalStore =  TotalDays ? TotalDays : ;
+    let OldLocalStore =  TotalDays ? TotalDays : 0;
     const TotalDaySection = document.getElementById('Total_Day');
     TotalDaySection.innerHTML = '<span>Dias Selecionados: </span>';
     const DayNumber = document.createElement('span');

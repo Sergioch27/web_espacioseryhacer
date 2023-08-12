@@ -119,7 +119,7 @@ for (let Y = 2023; Y <=2023; Y++){
                     dayName: `${DayName}`
                 }
                 month.push(Day);
-            }; 
+            };
         }
     }
 }
