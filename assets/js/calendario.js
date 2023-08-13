@@ -1,7 +1,8 @@
 
 let MyCalendar = new calendar();
 const NewCalendar = MyCalendar.CreateCalendar();
-let Booking_date = [];
+let Booking_date = JSON.parse(sessionStorage.getItem('Booking')) || [];
+let button = '';
 function CreateCaledar(){
     const calendaElement_1 = document.getElementById('calendar_section');
     let Calendario = document.createElement('table');
@@ -14,7 +15,7 @@ function CreateCaledar(){
 
     const BodyTable = document.createElement('tbody');
     Calendario.appendChild(BodyTable);
-    
+
     for (let YearData of NewCalendar){
         for (let y in YearData) {
             let MounthsData = YearData[y];
@@ -30,7 +31,7 @@ function CreateCaledar(){
                         Trtable.classList.add('td_day');
                         BodyTable.append(Trtable);
                         for(let day of Dias){
-                            let button = document.createElement('a');
+                            button = document.createElement('a');
                             let ListaDias = document.createElement('tr');
                             const id_day = `${NombreMes.charAt(0)}${day.dayName.charAt(0)}${day.day_id}`;
                             button.setAttribute('id', `${id_day}`);
@@ -39,7 +40,8 @@ function CreateCaledar(){
                             button.appendChild(ListaDias);
                             ListaDias.textContent = `${day.dayName} ${day.day_id}`;
                             Trtable.appendChild(button);
-                            evenClic(id_day);
+                            console.log(button);
+                            evenClic();
                             console.log(day);
                         };
             }
@@ -48,33 +50,39 @@ function CreateCaledar(){
     }
 }
 CreateCaledar();
-function evenClic(id_day){
-    window.addEventListener('load',()=>{
-        let contentCal = document.getElementById(`${id_day}`);
-        contentCal.addEventListener("click",()=>{
-            let fecha = contentCal.getAttribute('data-fecha');
+function evenClic(){
+            console.log(button);
+            button.addEventListener("click",()=>{
+            let fecha = button.getAttribute('data-fecha');
             Booking_date.push(fecha);
             SaveBooking();
-            GetBooking()
+            GetBooking();
             // console.log(Booking_date);
         });
-    });
     return Booking_date;
 }
 function SaveBooking(){
     const Bookings = JSON.stringify(evenClic());
-    let AllBooking = localStorage.setItem('Booking',`${Bookings}`);
-    return AllBooking;
+    let NumberDay = localStorage.setItem('TotalDays',`${Bookings}`);
+    let AllBooking = sessionStorage.setItem('Booking',`${Bookings}`);
+    return AllBooking, NumberDay;
 }
 function GetBooking(){
-    let TotalDays = (JSON.parse(localStorage.getItem('Booking'))).length;
-    let OldLocalStore =  TotalDays ? TotalDays : 0;
+    let OldLocalStore =  sessionStorage.getItem('Booking');
     const TotalDaySection = document.getElementById('Total_Day');
+    TotalDaySection.classList.add('text_size');
     TotalDaySection.innerHTML = '<span>Dias Selecionados: </span>';
     const DayNumber = document.createElement('span');
     TotalDaySection.appendChild(DayNumber);
-    TotalDays += OldLocalStore;
-    DayNumber.textContent =  `${TotalDays}`;
-    console.log(TotalDays);
+    if (OldLocalStore) {
+        const TotalDays = JSON.parse(OldLocalStore).length;
+        DayNumber.textContent =  `${TotalDays}`;
+            console.log(TotalDays);
+    } else {
+        DayNumber.textContent = '0';
+    }
 }
-GetBooking();
+document.addEventListener('DOMContentLoaded',()=>{
+    GetBooking();
+    evenClic();
+})
