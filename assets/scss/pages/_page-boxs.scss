@@ -1,0 +1,54 @@
+.mg_10 {
+    margin: 10%;
+}
+.size-section_100 {
+    display: flex;
+    width: 60%;
+    margin: 20px auto;
+}
+.title_secction {
+    h2 {
+        font-size: 4rem;
+    }
+    padding: 20px;
+}
+.wi_100 {
+    width: 100%;
+}
+.zone_pm {
+    display: flex;
+    align-items: center;
+    select {
+        height: 40px;
+        width: 198px;
+    }
+}
+.style_table {
+    width: 50%;
+    margin: auto;
+}
+.td_day {
+    padding: 1px;
+    tr {
+        border: 1px solid;
+    }
+}
+.td_day tr {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.day_a {
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 2px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.text_size{
+    font-size: 3rem;
+}
