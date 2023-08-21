@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Sergioch27/web_espacioseryhacer/issues"
   },
-  "homepage": "https://github.com/Sergioch27/web_espacioseryhacer#readme"
+  "homepage": "https://github.com/Sergioch27/web_espacioseryhacer#readme",
+  "dependencies": {
+    "@strapi/provider-upload-aws-s3": "^4.12.5",
+    "pg": "^8.11.3"
+  }
 }
