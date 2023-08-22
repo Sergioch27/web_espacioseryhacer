@@ -9,18 +9,17 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.12.5",
-    "@strapi/plugin-users-permissions": "4.12.5",
     "@strapi/plugin-i18n": "4.12.5",
-    "pg": "8.8.0"
+    "@strapi/plugin-users-permissions": "4.12.5",
+    "@strapi/strapi": "4.12.5",
+    "pg": "^8.8.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "cb42338d-c774-4f48-b9a0-ec156a7d290d"
+    "uuid": "6aef92be-96db-48fc-a525-1a776826f326"
   },
   "engines": {
     "node": ">=16.0.0 <=20.x.x",

@@ -1,23 +1,5 @@
 {
-  "name": "web_v2_espacioseryhacer",
-  "version": "1.0.0",
-  "description": "web_espacioseryhacer_v2.0_scss",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sergioch27/web_espacioseryhacer.git"
-  },
-  "author": "Sergio Chavarri",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sergioch27/web_espacioseryhacer/issues"
-  },
-  "homepage": "https://github.com/Sergioch27/web_espacioseryhacer#readme",
   "dependencies": {
-    "@strapi/provider-upload-aws-s3": "^4.12.5",
     "pg": "^8.11.3"
   }
 }
