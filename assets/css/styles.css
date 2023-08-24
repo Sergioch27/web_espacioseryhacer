@@ -87,6 +87,32 @@ html {
   width: 100%;
 }
 
+.header_button {
+  border: none;
+  background-color: transparent;
+}
+.header_button img {
+  vertical-align: 0;
+}
+
+.offcanvas-fix {
+  height: fit-content !important;
+  width: 42vh;
+  top: 15% !important;
+  left: 75% !important;
+}
+
+.offcanvas-title {
+  font-size: 2rem;
+  margin: auto;
+}
+
+.button-login {
+  padding: 10px;
+  margin: auto;
+  text-align: center;
+}
+
 /* FIN Estilos Header top */
 /* Estilos Header top mobile*/
 .header_top_mobile {

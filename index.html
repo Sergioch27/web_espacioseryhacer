@@ -35,15 +35,15 @@
       <div class="header_top_section_3 imgsize">
         <ul>
           <li>
-            <a href="#">
+            <button type="button" class="header_button" data-bs-toggle="offcanvas" data-bs-target="#LoginModal">
               <img src="./assets/img/iconmonstr-user-circle-thin.svg" alt="login">
               ENTRAR
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button type="button" class="header_button" data-bs-toggle="offcanvas" data-bs-target="#RegisterModal">
               <img src="./assets/img/iconmonstr-task-thin.svg" alt="register"> REGISTRO
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -513,7 +513,47 @@
     </div>
   </footer>
   <!-- FIN SECCION DE FOOTER -->
+  <!-- FORMULARIO INICIAR SESIÓN -->
+  <div class="offcanvas offcanvas-top offcanvas-fix" tabindex="-1" id="LoginModal" aria-labelledby="LoginModalLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">INICIAR SESIÓN</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form id="InicioSesion">
+        <label for="User" class="form-label">Nombre de Usuario o Direccion de Correo (Email):</label>
+        <input id="User" name="User" class="form-control form-control-lg"  type="text" placeholder="Nombre de Usuario o Direccion de Correo" aria-label="default input example">
+        <label for="Password"  class="form-label">Password</label>
+        <input type="password" name="Password" id="inputPassword" class="form-control form-control-lg" aria-describedby="passwordHelpBlock" placeholder="Password">
+        <div class="col-auto button-login">
+          <button type="submit" class="btn btn-primary mb-3">INICIAR SESIÓN</button>
+        </div>    
+  
+      </form>
+    </div>
+  </div>
+<!-- FIN FORMULARIO INICIAR SESIÓN -->
+<!-- FORMULARIO REGISTRO -->
+  <div class="offcanvas offcanvas-top offcanvas-fix" tabindex="-1" id="RegisterModal" aria-labelledby="RegisterModalLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">CREAR CUENTA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <label for="NameUser" class="form-label">Nombre de Usuario:</label>
+      <input id="NameUser" class="form-control form-control-lg"  type="text" placeholder="Nombre de Usuario o Direccion de Correo" aria-label="default input example">
+      <label for="email" class="form-label">Dirección dE Correo (Email):</label>
+      <input id="email" class="form-control form-control-lg"  type="text" placeholder="Nombre de Usuario o Direccion de Correo" aria-label="default input example">
+      <label for="PasswordNewUser" class="form-label">Password</label>
+      <input type="password" id="PasswordNewUser" class="form-control form-control-lg" aria-describedby="passwordHelpBlock" placeholder="Password">
+      <div class="col-auto button-login">
+        <button type="submit" class="btn btn-primary mb-3">REGISTRARSE</button>
+      </div>    
+    </div>
+  </div>
+<!-- FIN FORMULARIO REGISTRO -->
   <script src="./assets/js/classes.js"></script>
+  <script src="./assets/js/login.js"></script>
   <!-- <script src="./assets/js/generedorcoupon.js"></script> -->
   <!-- <script src="./assets/js/slider.js"></script> -->
 </body>

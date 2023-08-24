@@ -1,26 +1,26 @@
 
-// Clase de inicio, donde se saluda y solicita los datos al visitante.
-//  pedirdatos funcion (metodo), que solicita los datos, y valida que esten colocados, ya que son obligatorios para continuar.
-// datos_complete funcion (metodo), que se ejecuta luego de completar los datos, y se concatena ambos datos para luego usarlo en la indentificacion del cupon.
-class saludo {
-    constructor() {
-        this.Nombre = '';
-        this.Apellido = '';
+const BaseUrl = "https://api.espacioseryhacer.com/api/";
+class login {
+    constructor(data) {
+        this.identifier = data['User'];
+        this.password = data['Password'];
     }
-    pedirdatos() {
-        alert('Hola Bienvenido a Espacio Ser y Hacer, para continuar necesitamos saber como te llamas: ');
-        do {
-            this.Nombre = prompt('Podrias indicarnos tu nombre:');
-            this.Apellido = prompt('Podrias indicarnos tu Apellido:');
-            if (this.Nombre === null || this.Apellido === null) {
-                alert('Necesitamos todo los datos para continuar Gracias!!')
-            }
-        } while (this.Nombre === null || this.Apellido === null);
+    EnviarDatos() {
+        const loginUrl = BaseUrl + "auth/local";
+        fetch(loginUrl, {
+            method: 'POST',
+            body: JSON.stringify({
+                identifier: this.identifier,
+                password: this.password,
+            }),
+            headers: {
+                'Content-type': 'application/json',
+            },
+        })
+        .then((response)=>response.json())
+        .then((data) => {return data})
+        .catch(err => console(err));
         };
-    datos_complete() {
-        let NombreandApellido = `${this.Nombre} ${this.Apellido}`;
-        return NombreandApellido;
-    }
     }
 // Clase donde se define el tamaño del codigo (cupon) y los caracteres que se utilizan para crearlo.
 // donde length = tamaño del codigo (cupon) un numero entero
@@ -85,8 +85,6 @@ class sliderconstructor {
 class calendar {
     constructor(){
         this.DayAndMounth = [];
-        this.currentWeekIndex = 0;
-        this.daysInWeek = 7;
     }
     CreateCalendar(){
 for (let Y = 2023; Y <=2023; Y++){

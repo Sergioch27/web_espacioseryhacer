@@ -22,7 +22,7 @@ function CreateCaledar(){
             for (let Mounthdata of MounthsData) {
                 for (let m in Mounthdata){
                     let NombreMes = m;
-                    let Dias = Mounthdata[m]
+                    let Dias = Mounthdata[m];
                     let listaMeses = document.createElement('th');
                     listaMeses.innerHTML = NombreMes;
                     ThTable.appendChild(listaMeses);
@@ -40,18 +40,17 @@ function CreateCaledar(){
                             button.appendChild(ListaDias);
                             ListaDias.textContent = `${day.dayName} ${day.day_id}`;
                             Trtable.appendChild(button);
-                            console.log(button);
+                            // console.log(button);
                             evenClic();
-                            console.log(day);
+                            // console.log(day);
                         };
             }
                 }
         }
     }
 }
-CreateCaledar();
 function evenClic(){
-            console.log(button);
+            // console.log(button);
             button.addEventListener("click",()=>{
             let fecha = button.getAttribute('data-fecha');
             Booking_date.push(fecha);
@@ -77,12 +76,13 @@ function GetBooking(){
     if (OldLocalStore) {
         const TotalDays = JSON.parse(OldLocalStore).length;
         DayNumber.textContent =  `${TotalDays}`;
-            console.log(TotalDays);
+            // console.log(TotalDays);
     } else {
         DayNumber.textContent = '0';
     }
 }
 document.addEventListener('DOMContentLoaded',()=>{
+    CreateCaledar();
     GetBooking();
     evenClic();
 })
