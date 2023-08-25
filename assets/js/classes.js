@@ -5,9 +5,9 @@ class login {
         this.identifier = data['User'];
         this.password = data['Password'];
     }
-    EnviarDatos() {
+    async EnviarDatos() {
         const loginUrl = BaseUrl + "auth/local";
-        fetch(loginUrl, {
+         const LoginData = await fetch(loginUrl, {
             method: 'POST',
             body: JSON.stringify({
                 identifier: this.identifier,
@@ -18,8 +18,9 @@ class login {
             },
         })
         .then((response)=>response.json())
-        .then((data) => {return data})
+        .then((DataLogin) => {return DataLogin})
         .catch(err => console(err));
+        return LoginData;
         };
     }
 // Clase donde se define el tamaño del codigo (cupon) y los caracteres que se utilizan para crearlo.
@@ -124,3 +125,6 @@ for (let Y = 2023; Y <=2023; Y++){
     return this.DayAndMounth;
     }
 }
+
+
+
