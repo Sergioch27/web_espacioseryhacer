@@ -115,8 +115,12 @@ function SendBooking(){
             const Dia = NewFormatCreateDate.getDate().toString().padStart(2, '0');
             const hora = NewFormatCreateDate.getHours().toString().padStart(2, '0');
             const Minutos = NewFormatCreateDate.getMinutes().toString().padStart(2, '0');
-            const NewDateCreate = `${Year}-${Mes}-${Dia} ${hora}:${Minutos}`
-            SendReservation.innerHTML = `${UserBooking.data.attributes.user} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`;
+            const NewDateCreate = `${Year}-${Mes}-${Dia} ${hora}:${Minutos}`;
+            Swal.fire(
+                'RESERVA EXITOSA',
+                SendReservation.innerHTML = `${UserBooking.data.attributes.user.toUpperCase()} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`,
+                'success'
+              )
             console.log(UserBooking); //probamos lo que recibimos del API repuesta.
         } catch (error){ // manejo de errores. 
             console.error("Error en proceso de reserva", error);
