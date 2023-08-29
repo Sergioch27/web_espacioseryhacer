@@ -57,7 +57,7 @@ function logout(){
         UserZone.childNodes[2].nodeValue = 'ENTRAR';
     })
 }
-//funcion para el registro de nuevos usuarios. 
+//funcion para el registro de nuevos usuarios.
 function register(){
     const RegisterForm = document.getElementById('RegisterUser');
     RegisterForm.addEventListener('submit', async e => {
