@@ -1,36 +1,71 @@
 
 const BaseUrl = "https://api.espacioseryhacer.com/api/";
-class login {
+class loginAndRegister {
     constructor(data) {
         this.identifier = data['User'];
         this.password = data['Password'];
+        this.username = data['username'];
+        this.email = data['email'];
     }
-    async EnviarDatos() {
+    async LogiDatos() {
         const loginUrl = BaseUrl + "auth/local";
-         const LoginData = await fetch(loginUrl, {
-            method: 'POST',
-            body: JSON.stringify({
-                identifier: this.identifier,
-                password: this.password,
-            }),
-            headers: {
-                'Content-type': 'application/json',
-            },
-        })
-        .then((response)=>response.json())
-        .then((DataLogin) => {return DataLogin})
-        .catch(err => console(err));
-        return LoginData;
+         try {
+            const LoginData = await fetch(loginUrl, {
+                method: 'POST',
+                body: JSON.stringify({
+                    identifier: this.identifier,
+                    password: this.password,
+                }),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+            const response = await LoginData.json();
+            if(LoginData.ok) {
+                return response;
+            } else {
+                throw new Error(response.message || "Error de Usuario o Contraseña");
+            }
+         }
+         catch (err) {
+            console.log(err)
+            throw err;
+         }
         };
+    async RegisterUser(){
+        const RegisterUrl = BaseUrl + "auth/local/register";
+        try {
+            const RegisterData = await fetch(RegisterUrl, {
+                method:'POST',
+                body: JSON.stringify({
+                    username: this.username,
+                    email: this.email,
+                    password: this.password
+                }),
+                headers: {
+                    'Content-type': 'application/json',
+                },
+            })
+            const response = await RegisterData.json();
+            if (RegisterData.ok){
+                return response;
+            }else{
+                throw new Error(response.message || "Error en el Registro Verifique sus datos");
+            }
+        } catch (err) {
+            console.log(err)
+            throw err;
+        }
+        }
     }
 // Clase donde se define el tamaño del codigo (cupon) y los caracteres que se utilizan para crearlo.
 // donde length = tamaño del codigo (cupon) un numero entero
 /* el cupon se genera tomando un numero aleatorio entre 0 y 1 (Math.random()) y multiplicandolo por la longitud de la cadena de caracteres, se  redondea hacia abajo devolviendo el entero menor o igual al numero generado = Math.floor. El resultado lo tomamos como la posicion que tenemos que seleccionar en la cadena de caracteres  y se selecciona con charAt() que  devuelve el caracter en esa posicion. asi usando el cliclo for las veces que se establezca el tamaño del codigo.
  */
 class Couponalphanumerico {
-    constructor() {
+    constructor(length) {
         this.length = length;
-        this.caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        this.caracteres = '0123456789';
     }
     generador () {
         let coupon = '';
@@ -123,6 +158,44 @@ for (let Y = 2023; Y <=2023; Y++){
     }
 }
     return this.DayAndMounth;
+    }
+}
+
+class  Reservations {
+    constructor(user, bookingDate,bookingId){
+        this.data = {
+            user : user,
+            bookings : bookingDate,
+            id_booking : bookingId
+        };
+    }
+    async RequestData(){
+        const BookingUrl = BaseUrl + 'bookings';
+        try {
+            const token = localStorage.getItem('SesionToken');
+        if (token){
+            const DataBooking = await fetch(BookingUrl,{
+                method: 'POST',
+                body: JSON.stringify({ data: this.data }),
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            const response = await DataBooking.json();
+            if (DataBooking.ok){
+                return response;
+            }else{
+                throw new Error(`Error en la respuesta de la API: ${DataBooking.status}`);
+            }
+        }else{
+            throw new Error("DEBE INICIAR SESION PARA PODER RESERVAR");
+        }
+        }
+        catch (err) {
+            console.log("Error enviando los datos", err);
+            throw err;
+        }
     }
 }
 

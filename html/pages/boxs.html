@@ -23,31 +23,50 @@ la experiencia de tus pacientes">
         <!-- INICIO MENU TOP -->
         <div class="header_top">
             <div class="header_top_section_1">
-                <ul class="info_contact">
-                    <li><span><i class="fa-solid fa-house"></i> Guardia Vieja 255 Oficna 1005</span></li>
-                    <li><span><i class="fa-solid fa-phone"></i>+569 93354 2252</span></li>
-                    <li><span><i class="fa-regular fa-envelope"></i>seryhacer.consulta@gmail.com</span></li>
-                </ul>
+              <ul class="info_contact">
+                <li>
+                  <a id="rss_ig" type="button" class="header_button iconStyle" data-bs-toggle="offcanvas" data-bs-target="#LoginModal">
+                    <i class="fab fa-instagram"></i>
+                    INSTAGRAM
+                  </a>
+                </li>
+                <li>
+                  <a id="rss_yb" type="button" class="header_button iconStyle" data-bs-toggle="offcanvas" data-bs-target="#RegisterModal">
+                    <i class="fab fa-youtube"></i> YOUTUBE
+                  </a>
+                </li>
+                <li>
+                  <a id="rss_fb" type="button" class="header_button iconStyle" data-bs-toggle="offcanvas" data-bs-target="#RegisterModal">
+                    <i class="fab fa-facebook-square"></i> FACEBOOK
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="logo_top_section">
-                <a href="../../index"><img src="../../assets/img/logo_header_1.png" alt="logo_seryhacer"></a>
+              <a href="./index"><img src="/assets/img/Logo4.png" alt="logo_seryhacer"></a>
             </div>
             <div class="header_top_section_3 imgsize">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="../../assets/img/iconmonstr-user-circle-thin.svg" alt="login">
-                            ENTRAR
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../../assets/img/iconmonstr-task-thin.svg" alt="register"> REGISTRO
-                        </a>
-                    </li>
-                </ul>
+              <ul>
+                <li>
+                  <button id="user" type="button" class="header_button iconStyle" data-bs-toggle="offcanvas" data-bs-target="#LoginModal">
+                    <i class="fas fa-user-circle"></i>
+                    ENTRAR
+                  </button>
+                </li>
+                <li id="register">
+                  <button  type="button" class="header_button iconStyle" data-bs-toggle="offcanvas" data-bs-target="#RegisterModal">
+                    <i class="fas fa-house-user"></i> REGISTRO
+                  </button>
+                </li>
+                <li id="logout" class="hide">
+                  <button type="button" class="header_button iconStyle">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> CERRAR SESION
+                  </button>
+                </li>
+              </ul>
             </div>
-        </div>
+          </div>
+      
         <!-- FIN MENU TOP -->
         <!-- INCIO MENU TOP MOBILE RESPONSIVE -->
         <div class="header_top_mobile">
@@ -192,6 +211,7 @@ la experiencia de tus pacientes">
             </section>
             <section>
                 <div id="Total_Day"></div>
+                <button id="sendbooking" type="button">RESERVAR</button>
             </section>
         </div>
     </article>
@@ -266,7 +286,49 @@ la experiencia de tus pacientes">
     </footer>
     <script src="../../assets/js/classes.js"></script>
     <script src="../../assets/js/calendario.js"></script>
+    <script src="../../assets/js/login.js"></script>
     <!-- FIN SECCION DE FOOTER -->
+      <!-- FORMULARIO INICIAR SESIÓN -->
+  <div class="offcanvas offcanvas-top offcanvas-fix" tabindex="-1" id="LoginModal" aria-labelledby="LoginModalLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">INICIAR SESIÓN</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form id="InicioSesion">
+        <label for="User" class="form-label">Nombre de Usuario o Direccion de Correo (Email):</label>
+        <input id="User" name="User" class="form-control form-control-lg"  type="text" placeholder="Nombre de Usuario o Direccion de Correo" aria-label="default input example">
+        <label for="Password"  class="form-label">Password</label>
+        <input type="password" name="Password" id="inputPassword" class="form-control form-control-lg" aria-describedby="passwordHelpBlock" placeholder="Password">
+        <div class="col-auto button-login">
+          <button id="ButtonSubmit" type="submit" class="btn btn-primary mb-3">INICIAR SESIÓN</button>
+          <div id="LoginRes"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- FIN FORMULARIO INICIAR SESIÓN -->
+<!-- FORMULARIO REGISTRO -->
+  <div class="offcanvas offcanvas-top offcanvas-fix" tabindex="-1" id="RegisterModal" aria-labelledby="RegisterModalLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasTopLabel">CREAR CUENTA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="ResBody">
+      <form id="RegisterUser">
+        <label for="username" class="form-label">Nombre de Usuario:</label>
+        <input id="username" name="username" class="form-control form-control-lg"  type="text" placeholder="Nombre de Usuario" aria-label="default input example">
+        <label for="email" class="form-label">Dirección dE Correo (Email):</label>
+        <input id="email" name="email" class="form-control form-control-lg"  type="text" placeholder="Direccion de Correo" aria-label="default input example">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" name="Password" id="PasswordNewUser" class="form-control form-control-lg" aria-describedby="passwordHelpBlock" placeholder="Password">
+        <div id="buttonLogin" class="col-auto button-login">
+          <button id="ResSubmit" type="submit" class="btn btn-primary mb-3">REGISTRARSE</button>
+          <div id="RegisterRes"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+<!-- FIN FORMULARIO REGISTRO -->
 </body>
-
 </html>

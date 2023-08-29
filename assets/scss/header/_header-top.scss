@@ -8,8 +8,16 @@
     box-shadow: $my-box-shadow-header;
 }
 .info_contact {
+    display: inline-flex;
     list-style: none;
-    font-size: 2rem;
+    font-size: 1rem;
+    li{
+        a{
+            text-decoration: none;
+            color: #000000;
+            padding: 10px;
+        }
+    }
 }
 .header_top_section_1 {
     display: inline-block;
@@ -24,7 +32,7 @@
     width: 33%;
     text-align: center;
     img {
-        width: 50%;
+        width: 40%;
     }
 }
 .header_top_section_3 {
@@ -73,5 +81,35 @@
     margin: auto;
     text-align: center;
 }
+.loader {
+    width: 10px;
+    height: 10px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+    .iconStyle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        i {
+            font-size: 4rem;
+        }
+    }
+    .hide {
+        visibility: hidden;
+    }
   /* FIN Estilos Header top */
 
