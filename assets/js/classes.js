@@ -1,5 +1,6 @@
 
-const BaseUrl = "https://api.espacioseryhacer.com/api/";
+const BaseUrl = "https://api.espacioseryhacer.com/api/"; // direccion base del API. es una api levantada por mi en STRAPI.
+// CLASE PARA MANEJAR EL INICIO Y REGISTRO. UN OBJETO Y SE TOMA DE EL LAS PROPIEDADES NECESARIA SEGUN EL METODO USADO (LogiDatos O RegisterUser)
 class loginAndRegister {
     constructor(data) {
         this.identifier = data['User'];
@@ -78,7 +79,7 @@ class Couponalphanumerico {
 }
 
 /* Constructor de slider (carrusel), se pregunta la cantidad de elementos del slider, se valida que solo sean numeros. y luego se construye el contenido llenando un array vacio, que tendra de parametro si se activa o no el slider a la vista 
-esto va a permitir luego cual de los elementos mostrar.
+esto va a permitir luego cual de los elementos mostrar. SE USO COMO ENTREGA ENTERIOR SE DEBE OPTIMIZAR PARA USAR EN LA WEB REAL.
 */
 class sliderconstructor {
     constructor() {
@@ -118,6 +119,7 @@ class sliderconstructor {
         return this.element;
     }
 }
+//CLASE QUE CREA TODO EL CALENDARIO, ES UNA LOGIA USADA CON LA FUNCION DATE() NATIVA DE JS, SE USO PASANDOLE EL M D Y DE MANERA QUE RETORNA TODAS LAS FECHAS. COLOCANDO ESO DENTRO DE UN OBJETO Y A SU VEZ LOS MESES EN ARREGLO QUE CONTIENEN UN ARREGLO DE LOS DIAS POR MES. SE USO EN ENTREGA ANTERIOR SE UTILIZA LUEGO PARA ARMAR UN CALENDARIO Y ENVIAR DIAS AL API.
 class calendar {
     constructor(){
         this.DayAndMounth = [];
@@ -160,7 +162,7 @@ for (let Y = 2023; Y <=2023; Y++){
     return this.DayAndMounth;
     }
 }
-
+//clase para enviar al API la reservaciones realizadas
 class  Reservations {
     constructor(user, bookingDate,bookingId){
         this.data = {

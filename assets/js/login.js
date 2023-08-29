@@ -1,9 +1,9 @@
-// let NewLogin = new login();
-// const MyLogin = NewLogin.PedirDatos(data);
+// funcion pra el manejo del inicio de sesion.
 function LogingetData(){
     const LoginForm = document.getElementById('InicioSesion');
     LoginForm.addEventListener('submit', async e => {
         e.preventDefault();
+        //se coloca un loader mientras se ejecuta la promesa, luego se regresa a valor original.
         const buttonZone = document.getElementById('ButtonSubmit');
         buttonZone.innerHTML = '<span class="loader"></span>';
         const data = Object.fromEntries(
@@ -35,6 +35,7 @@ function LogingetData(){
         }
     })
 }
+//verifica que un usuario ya este con sesion iniciada esto es por que se guarda un token en el localStorege y se consulta si existe. 
 function VerifyLogin(){
     if(localStorage.getItem('SesionToken')){
         let UserData = localStorage.getItem('UserName');
@@ -44,6 +45,7 @@ function VerifyLogin(){
         UserZone.childNodes[2].nodeValue = `${UserData.toUpperCase()}`;
     }
 }
+//funcion para el cierre de sesion limpiando el localstorege.
 function logout(){
     document.getElementById('logout').addEventListener('click', e=>{
         e.preventDefault();
@@ -55,6 +57,7 @@ function logout(){
         UserZone.childNodes[2].nodeValue = 'ENTRAR';
     })
 }
+//funcion para el registro de nuevos usuarios. 
 function register(){
     const RegisterForm = document.getElementById('RegisterUser');
     RegisterForm.addEventListener('submit', async e => {
@@ -68,6 +71,7 @@ function register(){
         try {
             const NewUser = await MyRegister.RegisterUser();
             console.log(NewUser);
+            //se cambia el contenido del modal.
             const ZoneBody = document.getElementById('ResBody');
             ZoneBody.innerHTML = `<div>REGISTRO EXITOSO</div> <div>${NewUser['user']['username']}</div> <div><button id="ButtonSubmitRes" type="submit" class="btn btn-primary mb-3" data-bs-toggle="offcanvas" data-bs-target="#LoginModal">INICIAR SESIÓN</button>
             </div>`
@@ -78,7 +82,7 @@ function register(){
                 const buttonClose = MyRegisterModal.childNodes[1];
                 buttonClose.childNodes[3].click();
             })
-        } catch (error) {
+        } catch (error) { //manejo de errores.
             console.error("Error de Registro", error);
             const buttonZone = document.getElementById('ResSubmit');
             buttonZone.innerHTML = 'REGISTRARSE';
