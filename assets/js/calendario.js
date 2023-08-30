@@ -125,12 +125,18 @@ function SendBooking(){
                 const hora = NewFormatCreateDate.getHours().toString().padStart(2, '0');
                 const Minutos = NewFormatCreateDate.getMinutes().toString().padStart(2, '0');
                 const NewDateCreate = `${Year}-${Mes}-${Dia} ${hora}:${Minutos}`;
-                Swal.fire(
-                    'RESERVA EXITOSA',
-                    SendReservation.innerHTML = `${UserBooking.data.attributes.user.toUpperCase()} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`,
-                    'success'
-                  )
+                Swal.fire({
+                    icon: 'success',
+                    title: 'RESERVA EXITOSA',
+                    text: SendReservation.innerHTML = `${UserBooking.data.attributes.user.toUpperCase()} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`,
+                    showConfirmButton: true,
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      window.location.reload();
+                    }
+                  })
                   sessionStorage.removeItem('Booking');
+                  localStorage.removeItem('TotalDays');
                 console.log(UserBooking); //probamos lo que recibimos del API repuesta.
             }else{
                 const buttonSend = document.getElementById('sendbooking');

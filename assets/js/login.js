@@ -66,6 +66,8 @@ function logout(){
         window.location.reload();
         localStorage.removeItem('SesionToken', );
         localStorage.removeItem('UserName');
+        sessionStorage.removeItem('Booking');
+        localStorage.removeItem('TotalDays');
         document.getElementById('logout').classList.add('hide');
         document.getElementById('register').removeAttribute('style');
         const UserZone = document.getElementById('user');
