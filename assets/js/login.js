@@ -35,6 +35,20 @@ function LogingetData(){
         }
     })
 }
+// validamos la contrasena en el registro.
+function validarContraseña() {
+    const contraseñaInput = document.getElementById("PasswordNewUser");
+    const mensajeDiv = document.getElementById("valpassword");
+    const contraseña = contraseñaInput.value;
+  
+    if (contraseña.length >= 6) {
+      mensajeDiv.textContent = "Contraseña válida.";
+      mensajeDiv.style.color = "green";
+    } else {
+      mensajeDiv.textContent = "La contraseña debe tener al menos 6 caracteres.";
+      mensajeDiv.style.color = "red";
+    }
+  }
 //verifica que un usuario ya este con sesion iniciada esto es por que se guarda un token en el localStorege y se consulta si existe. 
 function VerifyLogin(){
     if(localStorage.getItem('SesionToken')){
@@ -49,6 +63,7 @@ function VerifyLogin(){
 function logout(){
     document.getElementById('logout').addEventListener('click', e=>{
         e.preventDefault();
+        window.location.reload();
         localStorage.removeItem('SesionToken', );
         localStorage.removeItem('UserName');
         document.getElementById('logout').classList.add('hide');
@@ -57,7 +72,7 @@ function logout(){
         UserZone.childNodes[2].nodeValue = 'ENTRAR';
     })
 }
-//funcion para el registro de nuevos usuarios.
+//funcion para el registro de nuevos usuarios. 
 function register(){
     const RegisterForm = document.getElementById('RegisterUser');
     RegisterForm.addEventListener('submit', async e => {
@@ -96,6 +111,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     LogingetData();
     VerifyLogin();
     logout();
+    document.getElementById("PasswordNewUser").addEventListener('keyup', validarContraseña)
 });
 
 

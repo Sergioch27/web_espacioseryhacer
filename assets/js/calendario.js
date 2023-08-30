@@ -55,22 +55,32 @@ function CreateCaledar(){
 //Creamos cada unos de los botones sobre las fechas, extrayendo el value de cada boton. 
 function evenClic(){
     const buttons = document.querySelectorAll('.day_a');
+
     buttons.forEach(button=>{
         button.addEventListener("click",()=>{
             let fecha = button.getAttribute('data-fecha');
             Booking_date.push(fecha);
-            SaveBooking();
-            GetBooking();
-            // console.log(button);
-            // console.log(Booking_date);
+            if(localStorage.getItem('SesionToken')){
+                SaveBooking();
+                GetBooking();
+            } else{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'INICIA SESION',
+                    text: 'DEBES INICIAR SESION PARA RESERVAR',
+                  })
+
+            }
+            console.log(button);
+            console.log(Booking_date);
     })
         });
 }
-//guardamos la seleccion del cliente en el locaStorege. 
+//guardamos la seleccion del cliente en el locaStorege.
 function SaveBooking(){
     const Bookings = JSON.stringify(Booking_date);
-    localStorage.setItem('TotalDays',`${Bookings}`);
-    // let AllBooking = sessionStorage.setItem('Booking',`${Bookings}`);
+    localStorage.setItem('TotalDays',`${Bookings}`); 
+    sessionStorage.setItem('Booking',`${Bookings}`);
 }
 // se uso entregas anteriores permitia saber cuantos dias seleciono el cliente. ahora no se muestra por que esta funcionando con el API, ese contenido es sustituido mas abajo. 
 function GetBooking(){
@@ -83,11 +93,10 @@ function GetBooking(){
     if (OldLocalStore) {
         const TotalDays = JSON.parse(OldLocalStore).length;
         DayNumber.textContent =  `${TotalDays}`;
-            // console.log(TotalDays);
+            console.log(TotalDays);
     } else {
         DayNumber.textContent = '0';
     }
-    return OldLocalStore;
 }
 //Funcion para enviar las reservas realizadas por el cliente al API.
 function SendBooking(){
@@ -101,35 +110,48 @@ function SendBooking(){
         const bookingId = code.generador();
         console.log(bookingId);
         //Se toma el array de dias seleccionados de la funcion GetBooking que retorna esos dias sacandolos del sessionStorage.
-        const bookingDate = JSON.parse(localStorage.getItem('TotalDays'));
+        const bookingDate = JSON.parse(sessionStorage.getItem('Booking'));
         //Se llama  la clase para envio de datos de la reserva.
         const SendUserBooking = new Reservations(user, bookingDate,bookingId);
         try {
+            if(bookingDate != null){
+                const UserBooking = await SendUserBooking.RequestData();
+                const SendReservation = document.getElementById('mensaje'); //donde mostraremos el mensaje luego de reservar.
+                const createDate = UserBooking.data.attributes.createdAt;
+                const NewFormatCreateDate = new Date(createDate);
+                const Year = NewFormatCreateDate.getFullYear();
+                const Mes = (NewFormatCreateDate.getMonth() + 1).toString().padStart(2, '0');
+                const Dia = NewFormatCreateDate.getDate().toString().padStart(2, '0');
+                const hora = NewFormatCreateDate.getHours().toString().padStart(2, '0');
+                const Minutos = NewFormatCreateDate.getMinutes().toString().padStart(2, '0');
+                const NewDateCreate = `${Year}-${Mes}-${Dia} ${hora}:${Minutos}`;
+                Swal.fire(
+                    'RESERVA EXITOSA',
+                    SendReservation.innerHTML = `${UserBooking.data.attributes.user.toUpperCase()} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`,
+                    'success'
+                  )
+                  sessionStorage.removeItem('Booking');
+                console.log(UserBooking); //probamos lo que recibimos del API repuesta.
+            }else{
+                const buttonSend = document.getElementById('sendbooking');
+                buttonSend.innerHTML = "RESERVAR";
+                Swal.fire({
+                    icon: 'error',
+                    title: 'FALTAN DATOS',
+                    text: 'DEBES SELECIONAR LOS DIAS QUE DESEAS RESERVAR',
+                  })
+            }
             //formateamos la fecha de creacion recibida como la respuesta 200 del API.
-            const UserBooking = await SendUserBooking.RequestData();
-            const SendReservation = document.getElementById('Total_Day'); //donde mostraremos el mensaje luego de reservar.
-            const createDate = UserBooking.data.attributes.createdAt;
-            const NewFormatCreateDate = new Date(createDate);
-            const Year = NewFormatCreateDate.getFullYear();
-            const Mes = (NewFormatCreateDate.getMonth() + 1).toString().padStart(2, '0');
-            const Dia = NewFormatCreateDate.getDate().toString().padStart(2, '0');
-            const hora = NewFormatCreateDate.getHours().toString().padStart(2, '0');
-            const Minutos = NewFormatCreateDate.getMinutes().toString().padStart(2, '0');
-            const NewDateCreate = `${Year}-${Mes}-${Dia} ${hora}:${Minutos}`;
-            Swal.fire(
-                'RESERVA EXITOSA',
-                SendReservation.innerHTML = `${UserBooking.data.attributes.user.toUpperCase()} SU RESEVA A SIDO CREADA CON EXITO EL ${NewDateCreate}`,
-                'success'
-              )
-            console.log(UserBooking); //probamos lo que recibimos del API repuesta.
         } catch (error){ // manejo de errores. 
             console.error("Error en proceso de reserva", error);
             const buttonSend = document.getElementById('sendbooking');
             buttonSend.innerHTML = "RESERVAR";
-            const ZoneMassage = document.getElementById('Total_Day');
+            const ZoneMassage = document.getElementById('mensaje');
             ZoneMassage.innerHTML = 'Debe Iniciar Sesion para poder reservar'
-        } finally { // manejamos que sucede luego de la respuesta. por ahora esta asi se debe optimizar para hacer un manejo por separado, ya que esto se ejecuta independientemente de la respuesta recibida es decir si falla o si es saticfactoria. 
-            buttonSend.setAttribute('style', 'display:none;')
+        } 
+        finally { // manejamos que sucede luego de la respuesta. por ahora esta asi se debe optimizar para hacer un manejo por separado, ya que esto se ejecuta independientemente de la respuesta recibida es decir si falla o si es saticfactoria. 
+            const buttonSend = document.getElementById('sendbooking');
+            buttonSend.innerHTML = "RESERVAR";
         }
     })
 }
